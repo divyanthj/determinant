@@ -1,7 +1,23 @@
 doctype html
-html(ng-app='angular-seed')
+html(ng-app='determinant')
   head
-  body(ng-controller='MainCtrl')
-    p Hello {{name}}
+    // inject:css
+    // endinject
+  body(ng-controller='MainCtrl' class='text-center')
+    div(class='panel panel-default')
+      div(ng-switch='matrix.length' class='panel-heading')
+        span(class='alert alert-danger' ng-switch-when='8') Matrix is too large
+        span(class='panel-heading') {{matrix.length}} x {{matrix.length}} matrix
+      div(id='matrix' class='panel-body')
+        div(ng-repeat='rows in matrix track by $index')
+          span(ng-repeat='element in rows track by $index')
+            input(type='number' ng-change='updateDeterminant()' ng-model='matrix[$parent.$index].val' rows='1' cols='1')
+      div(id='buttons')
+        button(class='btn btn-success shadow' ng-click='') Increase Size
+        button(class='btn btn-danger shadow' ng-click='') Decrease Size
+      h4
+        span(class='label label-default window')
+
+
     // inject:js
     // endinject

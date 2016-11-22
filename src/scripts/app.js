@@ -1,3 +1,3 @@
 'use strict';
 
-var app = angular.module('angular-seed', []);
+var app = angular.module('determinant', []);

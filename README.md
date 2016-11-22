@@ -1,6 +1,6 @@
-# Angular Seed Project
+# Determinant of a matrix
 
-This is a self-contained project with the following stack
+User-friendly angular app to calculate determinant of a square matrix. This app contains the following items in stack.
 
 1. Angular
 2. Pug
