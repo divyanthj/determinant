@@ -1,41 +1,47 @@
-app.service('resize', [function(calculate) {
+app.factory('resize', [function(calculate) {
 
-  this.increase = function(matrix) {
+  return {
 
-      var initSize = matrix.length;
+    increase : function(matrix) {
 
-      angular.forEach(matrix, function(row, index) {
+        var initSize = matrix.length;
 
-        row.push({
+        angular.forEach(matrix, function(row, index) {
 
-          val : 0
+          row.push({
+
+            val : 0
+
+          });
 
         });
 
-      });
+        var newRow = [];
 
-      var newRow = [];
+        for(var i=0; i <= initSize; i++) {
 
-      for(var i=0; i <= initSize; i++) {
+          newRow.push({val:0})
 
-        newRow.push({val:0})
+        }
+
+        matrix.push(newRow);
+
+      },
+
+      decrease : function(matrix) {
+
+        matrix.pop();
+
+        angular.forEach(matrix, function(row) {
+
+          row.pop();
+
+        })
 
       }
 
-      matrix.push(newRow);
+  };
 
-    }
 
-    this.decrease = function(matrix) {
-
-      matrix.pop();
-
-      angular.forEach(matrix, function(row) {
-
-        row.pop();
-
-      })
-
-    }
 
 }]);

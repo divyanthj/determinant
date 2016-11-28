@@ -1,6 +1,8 @@
-app.service('calculate', function() {
+app.factory('calculate', function() {
 
-  this.determinant = function(A) {
+  return {
+
+    determinant : function(A) {
 
       var s;
 
@@ -75,12 +77,16 @@ app.service('calculate', function() {
 
         }
 
-        det += s * A[0][i].val * (determinant(smaller));
+        det += s * A[0][i].val * (this.determinant(smaller));
 
       }
 
       return det;
 
     }
+
+
+  }
+
 
 });
