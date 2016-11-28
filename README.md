@@ -16,3 +16,5 @@ After you clone project, do
 ## Running
 
 Do `gulp serve` to open the app in default browser.
+
+## [Demo](https://divyanthj.github.io/determinant/)
