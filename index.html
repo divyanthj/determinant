@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="determinant">
+  <head>
+    <!-- inject:css-->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css">
+    <link rel="stylesheet" href="styles/app.css">
+    <!-- endinject-->
+  </head>
+  <body class="text-center" ng-controller="MainCtrl">
+    <div class="panel panel-default">
+      <div class="panel-heading" ng-switch="matrix.length"><span class="panel-heading">{{matrix.length}} x {{matrix.length}} matrix</span></div>
+      <div class="panel-body" id="matrix">
+        <div ng-repeat="rows in matrix track by $index"><span ng-repeat="element in rows track by $index">
+            <textarea class="small shadow" ng-change="update()" ng-model="matrix[$parent.$index][$index].val" rows="1" cols="1"></textarea></span></div>
+      </div>
+      <div id="buttons">
+        <label class="btn btn-primary shadow" ng-click="increaseSize()" btn-checkbox>Increase size</label>
+        <label class="btn btn-danger shadow" ng-click="decreaseSize()" btn-checkbox>Decrease size</label>
+      </div>
+      <h4><span class="label label-default window shadow">{{determinantValue}}</span></h4>
+    </div>
+    <!-- inject:js-->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/services/calculate.js"></script>
+    <script src="scripts/services/resize.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <!-- endinject-->
+  </body>
+</html>
