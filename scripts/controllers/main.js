@@ -17,13 +17,15 @@ app.controller('MainCtrl', ['$scope', 'calculate', 'resize', function($scope, ca
 
     resize.increase($scope.matrix)
 
-    //$scope.update();
+    $scope.update();
 
   }
 
   $scope.decreaseSize = function() {
 
     resize.decrease($scope.matrix);
+
+    $scope.update();
 
   }
 
