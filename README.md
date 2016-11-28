@@ -1,6 +1,6 @@
 # Determinant of a matrix
 
-User-friendly angular app to calculate determinant of a square matrix. This app contains the following items in stack.
+User-friendly angular app to instantly calculate determinant of a square matrix. This app contains the following items in stack.
 
 1. Angular
 2. Pug
