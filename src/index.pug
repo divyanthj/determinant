@@ -11,12 +11,11 @@ html(ng-app='determinant')
       div(id='matrix' class='panel-body')
         div(ng-repeat='rows in matrix track by $index')
           span(ng-repeat='element in rows track by $index')
-            input(type='number' ng-change='updateDeterminant()' ng-model='matrix[$parent.$index].val' rows='1' cols='1')
+            input(type='text' ng-change='update()' ng-model='matrix[$parent.$index][$index].val' rows='1' cols='1')
       div(id='buttons')
-        button(class='btn btn-success shadow' ng-click='') Increase Size
-        button(class='btn btn-danger shadow' ng-click='') Decrease Size
+        label(class='btn btn-primary' btn-checkbox) Increase size
       h4
-        span(class='label label-default window')
+        span(class='label label-default window') {{determinant}}
 
 
     // inject:js

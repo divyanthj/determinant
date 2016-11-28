@@ -11,7 +11,7 @@ User-friendly angular app to calculate determinant of a square matrix. This app 
 After you clone project, do
 
 1. `npm install` to install dev dependencies.
-2. `bower install` to install front end dependencies.
+2. `bower install` to install front end dependencies
 
 ## Running
 
