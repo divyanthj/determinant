@@ -6,16 +6,16 @@ html(ng-app='determinant')
   body(ng-controller='MainCtrl' class='text-center')
     div(class='panel panel-default')
       div(ng-switch='matrix.length' class='panel-heading')
-        span(class='alert alert-danger' ng-switch-when='8') Matrix is too large
         span(class='panel-heading') {{matrix.length}} x {{matrix.length}} matrix
       div(id='matrix' class='panel-body')
         div(ng-repeat='rows in matrix track by $index')
           span(ng-repeat='element in rows track by $index')
-            input(type='text' ng-change='update()' ng-model='matrix[$parent.$index][$index].val' rows='1' cols='1')
+            input(type='text' class='small' ng-change='update()' ng-model='matrix[$parent.$index][$index].val' rows='1' cols='1')
       div(id='buttons')
-        label(class='btn btn-primary' btn-checkbox) Increase size
+        label(class='btn btn-primary' ng-click='increaseSize()' btn-checkbox) Increase size
+        label(class='btn btn-primary' ng-click='decreaseSize()' btn-checkbox) Decrease size
       h4
-        span(class='label label-default window') {{determinant}}
+        span(class='label label-default window') {{determinantValue}}
 
 
     // inject:js

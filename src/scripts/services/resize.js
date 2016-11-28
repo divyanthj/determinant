@@ -1,64 +1,41 @@
-app.factory('resize', function() {
+app.service('resize', [function(calculate) {
 
-  var rowLength = $scope.matrix[0].length;
-  var colLength = $scope.matrix.length;
+  this.increase = function(matrix) {
 
+      var initSize = matrix.length;
 
-  var addRow = function() {
+      angular.forEach(matrix, function(row, index) {
 
-    this.rowLength = $scope.matrix[0].length;
+        row.push({
 
-    this.colLength = $scope.matrix.length;
+          val : 0
 
-    var array = [];
+        });
 
-    for(var i=0;i<this.rowLength;i++) {
+      });
 
-      array.push({"val":0});
+      var newRow = [];
 
-    }
+      for(var i=0; i <= initSize; i++) {
 
-    $scope.matrix.push(array);
+        newRow.push({val:0})
 
-  };
+      }
 
-  var addCol = function() {
-
-    this.rowLength = $scope.matrix[0].length;
-
-    this.colLength = $scope.matrix.length;
-
-    for(var i=0;i<this.colLength;i++) {
-
-      $scope.matrix[i].push({"val":0});
+      matrix.push(newRow);
 
     }
 
-  };
+    this.decrease = function(matrix) {
 
-  var removeRow = function() {
+      matrix.pop();
 
-    this.rowLength =   $scope.matrix[0].length;
+      angular.forEach(matrix, function(row) {
 
-    this.colLength = $scope.matrix.length;
+        row.pop();
 
-    $scope.matrix.splice(this.colLength-1,1);
-
-  };
-
-  var removeCol = function() {
-
-    this.rowLength =   $scope.matrix[0].length;
-
-    this.colLength = $scope.matrix.length;
-
-    for(var i=0;i<this.colLength;i++) {
-
-      $scope.matrix[i].splice(this.rowLength-1,1);
+      })
 
     }
-  };
 
-
-
-});
+}]);
