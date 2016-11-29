@@ -1,3 +1,5 @@
+'use strict';
+
 app.directive('selectOnClick', ['$window', function ($window) {
 
   return {
@@ -19,5 +21,5 @@ app.directive('selectOnClick', ['$window', function ($window) {
        }
 
    };
-   
+
 }]);
