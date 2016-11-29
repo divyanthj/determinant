@@ -10,7 +10,19 @@ var gulp = require('gulp'),
 
     open = require('gulp-open'),
 
-    run = require('run-sequence');
+    run = require('run-sequence'),
+
+    jasmine = require('gulp-jasmine'),
+
+    reporters = require('jasmine-reporters');
+
+gulp.task('test', function() {
+
+  gulp.src('www/specs/**/*.js')
+
+    .pipe(jasmine());
+
+});
 
 
 gulp.task('buildpug', function() {
