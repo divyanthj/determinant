@@ -89,9 +89,9 @@ gulp.task('injectcss', function() {
 
 gulp.task('buildjs', function() {
 
-  return gulp.src('src/scripts/**/*.js')
+  return gulp.src('src/**/*.js')
 
-    .pipe(gulp.dest('www/scripts/'));
+    .pipe(gulp.dest('www/'));
 
 });
 

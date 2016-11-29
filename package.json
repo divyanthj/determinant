@@ -5,6 +5,9 @@
   "main": "index.js",
   "author": "Divyanth Jayaraj",
   "license": "ISC",
+  "scripts": {
+    "test": "karma start karma.conf.js"
+  },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-inject": "^4.1.0",
