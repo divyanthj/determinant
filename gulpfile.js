@@ -18,7 +18,11 @@ var gulp = require('gulp'),
 
 gulp.task('test', function() {
 
-  gulp.src('www/specs/**/*.js')
+  gulp.src([//'www/bower_components/angular/angular.js',
+        //'www/scripts/app.js',
+        //'www/scripts/**/*.js',
+        //'www/bower_components/angular-mocks/angular-mocks.js',
+        'www/specs/**/*.js'])
 
     .pipe(jasmine());
 

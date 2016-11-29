@@ -10,7 +10,7 @@ html(ng-app='determinant')
       div(id='matrix' class='panel-body')
         div(ng-repeat='rows in matrix track by $index')
           span(ng-repeat='element in rows track by $index')
-            textarea(class='small shadow' ng-change='update()' ng-model='matrix[$parent.$index][$index].val' rows='1' cols='1')
+            textarea(class='small shadow' ng-change='update()' ng-model='matrix[$parent.$index][$index].val' rows='1' cols='1' select-on-click)
       div(id='buttons')
         label(class='btn btn-primary shadow' ng-click='increaseSize()' btn-checkbox) Increase size
         label(class='btn btn-danger shadow' ng-click='decreaseSize()' btn-checkbox) Decrease size
