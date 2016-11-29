@@ -1,4 +1,5 @@
 'use strict';
+
 app.controller('MainCtrl', ['$scope', 'calculate', 'resize', function($scope, calculate, resize) {
 
   $scope.matrix = [[{"val":0},{"val":1}],[{"val":3},{"val":4}]];

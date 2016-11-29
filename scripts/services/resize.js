@@ -1,4 +1,5 @@
-app.factory('resize', [function(calculate) {
+'use strict';
+app.factory('resize', [function() {
 
   return {
 
